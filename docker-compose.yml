@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    volumes:
+      - ./src/:/var/www/html/
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    ports:
+      - ${APP_PORT}:80
+    env_file:
+      - .env
